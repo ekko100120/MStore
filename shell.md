@@ -78,4 +78,8 @@ $ workdir=$(cd $(dirname $0); pwd)
 #获取当前脚本名
 $ basename $0
 ```
-##### 
+##### 打印奇数行偶数行
+$ awk "NR%2" filename #答应奇数行
+$ awk "!(NR%2)" filename #打印偶数行
+
+
