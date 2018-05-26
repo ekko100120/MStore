@@ -1,7 +1,7 @@
 ## Shell store
 ****
 
-1. 修改mac的配置使得vim可以使用系统的复制粘贴[command+c];
+##### 1. 修改mac的配置使得vim可以使用系统的复制粘贴[command+c];
 ```shell
 # 在.vimrc配置文件中添加
 $ vim ~/.vimsrc
@@ -10,7 +10,7 @@ vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 ```
-2. vim 操作
+##### 2. vim 操作
 
 vim一共有4个模式：
 
@@ -35,7 +35,7 @@ vim命令
 * x,X:x向后删除一个字符(相当于[del]按键),X向前删除一个字符(相当于[backspace]即退格键)
 * nx:n为数字，连续向后删除n个字符
 
-#### 3 $意义
+##### 3 $意义
 
 $$
 
@@ -71,3 +71,11 @@ Shell本身的文件名
 $1～$n
 
 添加到Shell的各参数值。$1是第1参数、$2是第2参数…。
+
+###### 获取当前文件的工作目录,当前脚本名
+```shell
+$ workdir=$(cd $(dirname $0); pwd)
+#获取当前脚本名
+$ basename $0
+```
+##### 
