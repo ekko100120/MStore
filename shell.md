@@ -14,7 +14,7 @@ vmap <C-c> :w !pbcopy<CR><CR>
 
 vim一共有4个模式：
 
-正常模式 (Normal-mode)  esc+esc
-插入模式 (Insert-mode)  i,I,a,A
-命令模式 (Command-mode) :
-可视模式 (Visual-mode)  先正常模式，然后 v
+* 正常模式 (Normal-mode)  esc+esc
+* 插入模式 (Insert-mode)  i,I,a,A
+* 命令模式 (Command-mode) :
+*可视模式 (Visual-mode)  先正常模式，然后 v
