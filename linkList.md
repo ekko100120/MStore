@@ -18,6 +18,8 @@
 
 * [springboot起步教程全家桶](https://www.jianshu.com/p/03038e512c76)
 
+* [从零开始spring事务事务(实例与API设计分析)](https://blog.csdn.net/huilangeliuxin/article/details/43446177)
+
 
 #### cache
 
