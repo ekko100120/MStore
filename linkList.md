@@ -1,5 +1,9 @@
 ## LinkList
 
+##### java相关的Tutorial，非常全面，缺点是全英文Tutorial
+
+* [https://howtodoinjava.com/spring-core/spring-bean-scopes/](https://howtodoinjava.com/spring-core/spring-bean-scopes/)
+
 #### Mysql
      
 *  [mysql索引的使用和优化](https://www.cnblogs.com/doudouxiaoye/p/5831449.html)
