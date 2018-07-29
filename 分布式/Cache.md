@@ -9,9 +9,12 @@ tags: Java cache 分布式
 ***
 
 #### 常见CacheAPI
-* 单JVMcache：guava cache，Hibernate EHCache
+* 单JVMcache：guava cache，Hibernate EHCache,spring cache
 
 
+
+
+[https://segmentfault.com/a/1190000007608782](https://segmentfault.com/a/1190000007608782)
 
 ### 一致性hash算法
 

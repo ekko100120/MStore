@@ -1,4 +1,7 @@
 # SpringMVC总结
+
+***
+#### 1 SpringMVC常用注解
 **@Controller**
 
 通过@controller标注即可将class定义为一个controller类
@@ -102,18 +105,18 @@ public void create(@RequestBody() String host){
 @ResponseStatus(reason="no reason",value=HttpStatus.BAD_REQUEST)
 @RequestMapping("/responsestatus")
 public void responseStatusTest(){
-    
+
 }
 ```
 
-**@CookieValue** 
+**@CookieValue**
 可以把Requestheader中关于cookie的值绑定到方法的参数上。
 
 例如有如下Cookie值：
 
 　　JSESSIONID=415A4AC178C59DACE0B2C9CA727CDD84，即把JSESSIONID的值绑定到参数cookie上。
 
- 
+
 ```
 @RequestMapping("/displayHeaderInfo.do")  
  public void displayHeaderInfo(@CookieValue("JSESSIONID") String cookie)  {  
@@ -122,8 +125,6 @@ public void responseStatusTest(){
 
 **@ExceptionHandler**
 
-
-```
 @RequestMapping("/exception")
  public void ExceptionTest() throws Exception{
     throw new Exception("i don't know");
@@ -134,8 +135,57 @@ public void responseStatusTest(){
     return "helloworld";  
  }
 ```
+****
+
+#### 1 SpringMVC 拦截器(Interceptor)，过滤器(filter)，监听器(Listener)
 
 
+**比较:**
+![拦截器VS过滤器VS监听器](/pic/拦截器_监听器_过滤器.bmp)
+
+##### 1.拦截器
+**原理:**
+```
+大部分时候，拦截器方法都是通过代理的方式来调用的。Struts2的拦截器实现相对简单。当请求到达Struts2的ServletDispatcher时，Struts2
+会查找配置文件，并根据配置实例化相对的拦截器对象，然后串成一个列表（List），最后一个一个的调用列表中的拦截器。Struts2的拦截器是可
+插拔的，拦截器是AOP的一个实现。Struts2拦截器栈就是将拦截器按一定的顺序连接成一条链。在访问被拦截的方法或者字段时，Struts2拦截器链
+中的拦截器就会按照之前定义的顺序进行调用。
+```
 
 
+**构建步骤:**
 
+1. 通过注解注册定义的拦截器，并通过@Componet定义为spring bean
+2. 自定义一个实现了Interceptor接口的类，或者继承抽象类HandlerInterceptorAdapter,根据反射机制获取method注解数据。
+3. 在配置类中重写addInterceptors接口添加拦截器和配置拦截路径
+
+```Java
+@Configuration
+@ComponentScan(basePackages = "com.mecury.boot")
+public class AppConfiguration implements WebMvcConfigurer {
+
+    @Autowired
+    private HandlerInterceptor handlerInterceptor;
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(handlerInterceptor).addPathPatterns("/**");
+    }
+
+```
+***
+##### 2.监听器
+[监听器概述](https://blog.csdn.net/reggergdsg/article/details/52891311)
+
+[Annotation监听器](https://blog.csdn.net/erbao_2014/article/details/68924231?locationNum=9&fps=1)
+
+[常用监听器](http://chenjumin.iteye.com/blog/2249833)
+
+
+***
+##### 3. 过滤器
+
+
+[https://blog.csdn.net/reggergdsg/article/details/52821502](https://blog.csdn.net/reggergdsg/article/details/52821502)
+
+
+[https://blog.csdn.net/zzp448561636/article/details/77745502](https://blog.csdn.net/zzp448561636/article/details/77745502)
