@@ -12,9 +12,13 @@ tags: Java cache 分布式
 * 单JVMcache：guava cache，Hibernate EHCache,spring cache
 
 
-
+[springCache](https://blog.csdn.net/dm_vincent/article/details/57526325)
 
 [https://segmentfault.com/a/1190000007608782](https://segmentfault.com/a/1190000007608782)
+
+[spring AOP和AspectJ AOP](https://blog.csdn.net/dm_vincent/article/details/57526325)
+
+[cache API](https://blog.csdn.net/wireless_com/article/details/79277272)
 
 ### 一致性hash算法
 
