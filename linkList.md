@@ -10,6 +10,9 @@
 
 *  [mysql优秀博客-鲁玉成云笔记](https://www.cnblogs.com/luyucheng/p/6289714.html)
 
+#### Redis
+* [redis优秀博主--redis系列❤❤](https://blog.csdn.net/u010416101/article/details/79690404)
+
 #### JVM
 * [Java class 加载机制,Class类以及Object之间的讨论, 详细，全面，易懂❤❤❤](http://www.cnblogs.com/nullzx/p/7640636.html)
 
