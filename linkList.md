@@ -60,5 +60,12 @@
 
 * [java多线程，并发，JAVASE，算法方面的知识深度解读----❤❤❤--建议全面学习吸收](http://www.cnblogs.com/nullzx/p/7798504.html#3965425)
 
+#### RabbitMQ 
+
+* [Rabbit exchange]
+
+#### scala分布式
+* [Rabbit ](http://www.cnblogs.com/tiger-xc/tag/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/)
+
 
 
