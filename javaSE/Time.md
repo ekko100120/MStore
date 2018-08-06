@@ -36,10 +36,53 @@
 	}
 
 ```
+
+3. java.time <---> String
  
+ * java.time ---> String
+ ```java
+ 
+ //使用Date和SimpleDateFormat
+SimpleDateFormat simpleDateFormat = 
+		new SimpleDateFormat("G yyyy年MM月dd号 E a hh时mm分ss秒");
+
+String format = simpleDateFormat.format(new Date());
+
+System.out.println(format); 
+//打印: 公元 2017年03月21号 星期二 下午 06时38分20秒
+
+//使用jdk1.8 LocalDateTime和DateTimeFormatter
+LocalDateTime now = LocalDateTime.now();
+DateTimeFormatter pattern = 
+	   DateTimeFormatter.ofPattern("G yyyy年MM月dd号 E a hh时mm分ss秒");
+String format = now.format(pattern);
+System.out.println(format);
+//打印: 公元 2017年03月21号 星期二 下午 06时38分20秒
 
 
-2. Demo
+ ```
+* String ---> java.time
+
+```java
+//使用Date和SimpleDateFormat
+SimpleDateFormat simpleDateFormat = 
+	  new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+Date date = simpleDateFormat.parse("2017-12-03 10:15:30");
+
+System.out.println(simpleDateFormat.format(date));
+//打印 2017-12-03 10:15:30
+
+
+//使用jdk1.8 LocalDateTime和DateTimeFormatter
+DateTimeFormatter pattern =  DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//严格按照ISO yyyy-MM-dd验证，03写成3都不行
+LocalDateTime dt = LocalDateTime.parse("2017-12-03 10:15:30",pattern); 
+
+System.out.println(dt.format(pattern));
+```
+
+4. Demo
 
 ```java
 public class TestJavaTime {
@@ -139,4 +182,13 @@ public class TestJavaTime {
         System.out.println("1970-01-01到现在的秒"+is.getEpochSecond()+"==毫秒=="+is.toEpochMilli());
     }
 }
+```
+
+#### JDBC <--->java.time
+
+```java
+
+ date -> LocalDate
+ time -> LocalTime
+ timestamp -> LocalDateTime
 ```
